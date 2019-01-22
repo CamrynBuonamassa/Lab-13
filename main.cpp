@@ -1,39 +1,39 @@
 // Lab 13 by Camryn Buonamassa
+// Templates and Makefile
 
 #include <iostream>
 #include "vectorfunctions.h"
 using namespace std;
 
 int main() {
-	cout << "Initialize an empty vector of type int with capacity of 10." << endl;
-	Vector<int, 10> vector;
+
+	cout << "Initialize a vector with 10 A's:" << endl;
+	Vector<int, 10> vector(10, A);
 	vector.printVector();
-	cout << "Size: " << vector.getVectorSize() << " Capacity: " << vector.getVectorCapacity() << endl;
-	/*
-	cout << "initialize a vector with 10 0s." << endl;
-	Vector<int> vec2(10, 0);
-	vec2.printVector();
-	cout << "Size: " << vec2.getVectorSize() << " Capacity: " << vec2.getVectorCapacity() << endl << endl;
+	cout << endl;
 	
-	cout << "insert a 2 at index 1." << endl;
-	vec2.insert(1,2);
-	vec2.printVector();
-	cout << "Size: " << vec2.getVectorSize() << " Capacity: " << vec2.getVectorCapacity() << endl << endl;
+	cout << "Insert a Z at index 1:" << endl;
+	vector.insert(1, Z);
+	vector.printVector();
+	cout << endl;
 	
-	cout << "add a 5 at the end." << endl;
-	vec2.push_back(5);
-	vec2.printVector();
-	cout << "Size: " << vec2.getVectorSize() << " Capacity: " << vec2.getVectorCapacity() << endl << endl;
+	cout << "Remove the element at index 5:" << endl;
+	vector.remove(5);
+	vector.printVector();
+	cout << endl;
 	
-	cout << "delete the last element." << endl;
-	vec2.pop_back();
-	vec2.printVector();
-	cout << "Size: " << vec2.getVectorSize() << " Capacity: " << vec2.getVectorCapacity() << endl << endl;
+	cout << "Pop back:" << endl;
+	vector.pop_back();
+	vector.printVector();
+	cout << endl;
 	
-	cout << "delete index 1 (the 2)." << endl;
-	vec2.deleteAtIndex(1);
-	vec2.printVector();
-	cout << "Size: " << vec2.getVectorSize() << " Capacity: " << vec2.getVectorCapacity() << endl << endl;
-	*/
-	return 0;
+	cout << "Delete first element." << endl;
+	vector.deleteAtIndex(0);
+	vector.printVector();
+	cout << endl;
+
+	cout << "Resize from 10 to 2:"
+	vector.resize(2);
+	vector.printVector();
+	cout << endl;
 }
