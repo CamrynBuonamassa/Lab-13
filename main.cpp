@@ -1,22 +1,15 @@
-/* Lab 13 by Camryn Buonamassa
-Array backed
-Insert at location
-Insert at end
-Delete from location
-Resize
-Classes and compiling .h files
-Vectors and operator overloading */
+// Lab 13 by Camryn Buonamassa
 
 #include <iostream>
 #include "vectorfunctions.h"
-using namspace std;
+using namespace std;
 
 int main() {
-	cout << "initialize an empty vector with capacity of 10." << endl;
-	Vector<int> vec1;
-	vec1.printVector();
-	cout << "Size: " << vec1.getVectorSize() << " Capacity: " << vec1.getVectorCapacity() << endl << endl;
-	
+	cout << "Initialize an empty vector of type int with capacity of 10." << endl;
+	Vector<int, 10> vector;
+	vector.printVector();
+	cout << "Size: " << vector.getVectorSize() << " Capacity: " << vector.getVectorCapacity() << endl;
+	/*
 	cout << "initialize a vector with 10 0s." << endl;
 	Vector<int> vec2(10, 0);
 	vec2.printVector();
@@ -41,6 +34,6 @@ int main() {
 	vec2.deleteAtIndex(1);
 	vec2.printVector();
 	cout << "Size: " << vec2.getVectorSize() << " Capacity: " << vec2.getVectorCapacity() << endl << endl;
-	
+	*/
 	return 0;
 }

@@ -1,13 +1,16 @@
 #pragma once
-#include "vectorfunctions.hxx"
-//#include <iostream>
-//using namespace std;
+#include "vectorfunctions.cpp"
+#include <iostream>
 
-template <class T>
+template <class T, int N>
 class Vector {
+	private:
+		int size;
+		int capacity = N; 
+		T* dynamicArray; //= NULL;
 	public:
 		Vector();
-		Vector(int initial_size, int initial_value);
+		Vector(int input_size, T value);
 		int getSize();
 		int getCapacity();
 		printVector();
@@ -16,8 +19,4 @@ class Vector {
 		remove(int index);
 		push_back(T value);
 		pop_back();
-	private:
-		int size;
-		int capacity = 10; 
-		T * arrayPointer = NULL;
 };
