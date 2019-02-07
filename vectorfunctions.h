@@ -1,22 +1,22 @@
 #pragma once
-#include "vectorfunctions.cpp"
 #include <iostream>
 
-template <class T, int N>
-class Vector {
+template <class T>
+class myvector {
 	private:
 		int size;
-		int capacity = N; 
+    int capacity;
 		T* dynamicArray; //= NULL;
 	public:
-		Vector();
-		Vector(int input_size, T value);
+		myvector();
+		myvector(int input_size, T value);
 		int getSize();
 		int getCapacity();
-		printVector();
-		resize(int newSize);
-		insert(int index, T value);
-		remove(int index);
-		push_back(T value);
-		pop_back();
+		void printVector();
+		void resize(int newSize);
+		void insert(int index, T value);
+		void remove(int index);
+		void push_back(T value);
+		void pop_back();
 };
+#include "vectorfunctions.cpp"

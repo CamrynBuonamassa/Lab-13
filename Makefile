@@ -1,13 +1,11 @@
 CXXFLAGS=-std=c++14
 LDFLAGS=
-OBJECTS=main.o vectorfunctions.o
+OBJECTS=main.o
 
-main: main.o vectorfunctions.o
-	g++ -o main main.o vectorfunctions.o
+main: main.o
+	g++ -o main main.o 
 
-vectorfunctions.o: vectorfunctions.cpp vectorfunctions.h
-main.o: main.cpp vectorfunctions.h
-
-
+main.o: main.cpp
+	g++ -c main.cpp
 clean:
 	rm -f $(OBJECTS)

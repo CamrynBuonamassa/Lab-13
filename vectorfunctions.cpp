@@ -1,11 +1,13 @@
 template <class T> //creates an array of size and type determined at compile time
-Vector<T>::Vector() {
+myvector<T>::myvector() {
 	size = 0;
-	dynamicArray = new T[capacity];	
+    capacity = 10;
+	dynamicArray = new T[capacity];
 }
 
 template <class T> //creates an array of N capacity and type T
-Vector<T>::Vector(int input_size, T value) {
+myvector<T>::myvector(int input_size, T value) {
+    capacity = 10;
 	dynamicArray = new T[capacity];
 	
 	if(input_size > capacity) { //checks if input size is greater than N
@@ -19,25 +21,25 @@ Vector<T>::Vector(int input_size, T value) {
 }
 
 template <class T>
-int Vector<T>::getSize() {
+int myvector<T>::getSize() {
 	return size;
 }
 
 template <class T>
-int Vector<T>::getCapacity() {
+int myvector<T>::getCapacity() {
 	return capacity;
 }
 
 template <class T> // print all items in vector separated by spaces
-Vector<T>::printVector() {
+void myvector<T>::printVector() {
     for (int i = 0; i < size; i++) {
-      cout << dynamicArray[i] << " "; 
+        std::cout << dynamicArray[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 template <class T> 
-Vector<T>::resize(int newSize) {
+void myvector<T>::resize(int newSize) {
 	capacity = newSize; //make capacity new size
 	T* newDynamicArray;
 	newDynamicArray = new T[capacity]; //new dynamic array
@@ -51,7 +53,7 @@ Vector<T>::resize(int newSize) {
 }
 
 template <class T>
-Vector<T>::insert(int index, T value) {
+void myvector<T>::insert(int index, T value) {
 	size += 1;	
 	if(size > capacity) {
 		resize(size);
@@ -81,7 +83,7 @@ Vector<T>::insert(int index, T value) {
 }
 
 template <class T>
-Vector<T>::remove(int index) {
+void myvector<T>::remove(int index) {
 	T* newDynamicArray;
 	newDynamicArray = new T[size-1];
 	bool removed = false;
@@ -106,17 +108,17 @@ Vector<T>::remove(int index) {
 }
 
 template <class T>
-Vector<T>::push_back(T value) { //adds an element to the end of the vector
+void myvector<T>::push_back(T value) { //adds an element to the end of the vector
 	size += 1;
 	if(size > capacity){
 		resize(size);
 	}
-	int i == size - 1;
+	int i = size - 1;
 	dynamicArray[i] = value;
 }
 
 template <class T>
-Vector<T>::pop_back() { //removes the last element of the vector, decreasing size by 1
-	int i == size - 1;
+void myvector<T>::pop_back() { //removes the last element of the vector, decreasing size by 1
+	int i = size - 1;
 	remove(i);	
 }
